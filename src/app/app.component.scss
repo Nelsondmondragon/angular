@@ -1,0 +1,137 @@
+
+@import '../styles.scss';
+
+// Contenedor principal de la aplicación
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  // Barra de Navegación
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .navbar-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 15px;
+
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1rem;
+          padding: 8px 12px;
+          transition: background-color 0.3s, border-radius 0.3s;
+
+          &:hover {
+            background-color: $secondary-color;
+            border-radius: 4px;
+          }
+
+          &.active {
+            background-color: $accent-color;
+            border-radius: 4px;
+            color: $text-color;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  // Área principal de contenido
+  main {
+    margin-top: 60px; // Ajusta esto para que el contenido no se oculte debajo de la barra de navegación
+    padding: 20px;
+    background-color: $background-color;
+    flex: 1;
+  }
+}
+
+
+// Variables de color
+$primary-color: #3498db; // Azul claro
+$secondary-color: #2c3e50; // Gris oscuro
+$background-color: #1e2a38; // Fondo oscuro
+$text-color: #ecf0f1; // Texto claro
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  color: $text-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+  }
+
+  button[type="submit"] {
+    padding: 0.7em;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+p {
+  text-align: center;
+  margin-top: 1em;
+
+  button {
+    background: none;
+    border: none;
+    color: $primary-color;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}

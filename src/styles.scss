@@ -1,0 +1,25 @@
+// Color palette
+$primary-color: #1e2a38; // Dark Blue
+$secondary-color: #2c3e50; // Dark Gray Blue
+$accent-color: #3498db; // Bright Blue
+$text-color: #ecf0f1; // Light Gray
+$background-color: #34495e; // Dark Gray
+
+// Global styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

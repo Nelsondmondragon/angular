@@ -1,0 +1,74 @@
+table, th, td {
+    border: 1px solid black;
+}
+.grid{
+    width: 100%;
+    background: #E6E6FA;
+    padding: 10px 2% 10px 2%;
+    float: none;
+    font-size: 12px;
+}
+
+// Definiciones de colores (asegúrate de tener estos colores definidos en variables globales)
+$background-color: #1e1e2f;
+$text-color: #ffffff;
+$input-background-color: #2e2e3f;
+$input-border-color: #3e3e4f;
+$input-focus-border-color: #5e5e7f;
+$label-color: #ffffff;
+$button-background-color: #4e4e5f;
+$button-hover-background-color: #5e5e7f;
+$button-text-color: #ffffff;
+
+// Contenedor de input
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+// Estilo para la etiqueta del input
+.input-label {
+  color: $label-color;
+  margin-bottom: 5px;
+}
+
+// Estilo para el input
+.styled-input {
+  background-color: $input-background-color;
+  border: 1px solid $input-border-color;
+  border-radius: 4px;
+  color: $text-color;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+  }
+}
+
+
+.button-container {
+    margin-top: 10px;
+  }
+  
+  // Estilo para el botón
+  .styled-button {
+    background-color: $button-background-color;
+    border: none;
+    border-radius: 4px;
+    color: $button-text-color;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: $button-hover-background-color;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
