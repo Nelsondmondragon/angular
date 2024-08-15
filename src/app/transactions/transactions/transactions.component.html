@@ -1,1 +1,107 @@
-<p>transactions works!</p>
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" #transaccionForm="ngForm">
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo</label>
+      <select
+        class="form-select"
+        id="tipo"
+        required
+        [(ngModel)]="transaccion.tipo"
+        name="tipo"
+      >
+        <option value="" disabled selected>Seleccione un tipo</option>
+        <option value="Deposito">Deposito</option>
+        <option value="Retiro">Retiro</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="numeroCuenta" class="form-label">Número de Cuenta</label>
+      <input
+        type="number"
+        class="form-control"
+        id="numeroCuenta"
+        required
+        [(ngModel)]="transaccion.numeroCuenta"
+        name="numeroCuenta"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cantidad"
+        required
+        [(ngModel)]="transaccion.cantidad"
+        name="cantidad"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoría</label>
+      <input
+        type="text"
+        class="form-control"
+        id="categoria"
+        required
+        [(ngModel)]="transaccion.categoria"
+        name="categoria"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea
+        class="form-control"
+        id="descripcion"
+        rows="3"
+        required
+        [(ngModel)]="transaccion.descripcion"
+        name="descripcion"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="estado" class="form-label">Estado</label>
+      <select
+        class="form-select"
+        id="estado"
+        required
+        [(ngModel)]="transaccion.estado"
+        name="estado"
+      >
+        <option value="" disabled selected>Seleccione un estado</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!transaccionForm.form.valid"
+    >
+      Guardar
+    </button>
+  </form>
+</div>
+
+<div *ngIf="this.isError">
+  {{ this.lstrMessag }}
+</div>
+
+<br />
+<br />
+<div>
+  <div id="idgridAccounts" class="grid">
+    <angular-slickgrid
+      gridId="gridAccounts"
+      [columnDefinitions]="CDTrans"
+      [gridOptions]="GPTrans"
+      [dataset]="dsTransactions"
+    >
+    </angular-slickgrid>
+  </div>
+</div>

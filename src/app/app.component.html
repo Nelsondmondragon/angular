@@ -1,9 +1,9 @@
 <h1>
-  {{title}}
+  {{ title }}
 </h1>
-<br>
+<br />
 
-<div *ngIf="this.service.lbolSignUp; then thenSignUp else elseSignUp"></div>
+<div *ngIf="this.service.lbolSignUp; then thenSignUp; else elseSignUp"></div>
 <ng-template #thenSignUp>
   <div>
     <app-signup></app-signup>
@@ -11,7 +11,7 @@
 </ng-template>
 <ng-template #elseSignUp>
   <div>
-    <div *ngIf="this.lbolUserLogu; then thenBlock else elseBlock"></div>
+    <div *ngIf="this.lbolUserLogu; then thenBlock; else elseBlock"></div>
     <ng-template #thenBlock>
       <div class="app-container">
         <!-- Barra de Navegación -->
@@ -21,14 +21,24 @@
           </div>
           <ul class="navbar-menu">
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/transaction" routerLinkActive="active">Transaction</a></li>
-            <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
-            <li><a routerLink="/accounts" routerLinkActive="active">Accounts</a></li>
-            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-            <li><a  (click)="fnLogOut()">Salir</a></li>  
+            <li>
+              <a routerLink="/transactions" routerLinkActive="active"
+                >Transaction</a
+              >
+            </li>
+            <li>
+              <a routerLink="/profile" routerLinkActive="active">Profile</a>
+            </li>
+            <li>
+              <a routerLink="/accounts" routerLinkActive="active">Accounts</a>
+            </li>
+            <li>
+              <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li><a (click)="fnLogOut()">Salir</a></li>
           </ul>
         </nav>
-      
+
         <main>
           <router-outlet></router-outlet>
         </main>
@@ -39,14 +49,26 @@
         <h2>Login</h2>
         <form (ngSubmit)="fnLogIN()">
           <label for="email">user</label>
-          <input type="email" id="email" [(ngModel)]="lstrUser" name="lstrUser" required>
-      
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="lstrUser"
+            name="lstrUser"
+            required
+          />
+
           <label for="password">Password</label>
-          <input type="password" id="password" [(ngModel)]="lstrPass" name="lstrPass" required>
-      
+          <input
+            type="password"
+            id="password"
+            [(ngModel)]="lstrPass"
+            name="lstrPass"
+            required
+          />
+
           <button type="submit">Login</button>
         </form>
-        <p><button (click)="fnSignUp()">Sign Up</button></p>
+        <p><button type="button" (click)="fnSignUp()">Sign Up</button></p>
       </div>
     </ng-template>
   </div>

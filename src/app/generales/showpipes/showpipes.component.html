@@ -1,0 +1,73 @@
+<table>
+  <thead>
+    <tr>
+      <th>Transformación</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Fecha -->
+    <tr>
+      <td>Fecha (default): {{ pipeDate | date }}</td>
+      <td>{{ pipeDate | date }}</td>
+    </tr>
+    <tr>
+      <td>Fecha (fullDate): {{ pipeDate | date : "fullDate" }}</td>
+      <td>{{ pipeDate | date : "fullDate" }}</td>
+    </tr>
+    <tr>
+      <td>Fecha (dd/MM/yyyy): {{ pipeDate | date : "dd/MM/yyyy" }}</td>
+      <td>{{ pipeDate | date : "dd/MM/yyyy" }}</td>
+    </tr>
+
+    <!-- Moneda -->
+    <tr>
+      <td>Moneda (default): {{ amount | currency }}</td>
+      <td>{{ amount | currency }}</td>
+    </tr>
+    <tr>
+      <td>Moneda (EUR): {{ amount | currency : "EUR" }}</td>
+      <td>{{ amount | currency : "EUR" }}</td>
+    </tr>
+    <tr>
+      <td>
+        Moneda (USD, symbol, 4.2-2):
+        {{ amount | currency : "USD" : "symbol" : "4.2-2" }}
+      </td>
+      <td>{{ amount | currency : "USD" : "symbol" : "4.2-2" }}</td>
+    </tr>
+
+    <!-- Decimal -->
+    <tr>
+      <td>Decimal (1.0-2): {{ decimal | number : "1.0-2" }}</td>
+      <td>{{ decimal | number : "1.0-2" }}</td>
+    </tr>
+
+    <!-- Porcentaje -->
+    <tr>
+      <td>Porcentaje (default): {{ percent | percent }}</td>
+      <td>{{ percent | percent }}</td>
+    </tr>
+    <tr>
+      <td>Porcentaje (2.2-2): {{ percent | percent : "2.2-2" }}</td>
+      <td>{{ percent | percent : "2.2-2" }}</td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="input-container">
+          <label for="user-input" class="input-label">Numero Cuenta</label>
+          <input
+            id="user-input"
+            type="text"
+            class="styled-input"
+            [(ngModel)]="numAccount"
+          />
+        </div>
+      </td>
+      <td>
+        <pre>{{ lAccounts | mypipe : numAccount | json }}</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>

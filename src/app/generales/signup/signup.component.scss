@@ -1,0 +1,59 @@
+@import "../../../styles.scss";
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222; /* Fondo oscuro para el formulario */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Ancho del formulario */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+label {
+  color: #fff; /* Color de texto claro */
+  margin-bottom: 5px;
+  align-self: flex-start; /* Alinear las etiquetas a la izquierda */
+}
+
+.input-field {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #333; /* Fondo oscuro para los inputs */
+  border: 1px solid #555; /* Borde oscuro */
+  border-radius: 5px;
+  color: #fff; /* Color de texto claro */
+}
+
+.input-field::placeholder {
+  color: #bbb; /* Color del placeholder */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #777; /* Color de borde al enfocar */
+}
+
+.btn-submit {
+  padding: 0.7em;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+.second-btn {
+  margin-left: 10px; /* Ajusta el valor según el espaciado deseado */
+}

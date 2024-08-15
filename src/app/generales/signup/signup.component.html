@@ -1,5 +1,59 @@
-<p>signup works!</p>
+<div class="form-container">
+  <label for="codigoUsuario">Código Usuario</label>
+  <input
+    type="text"
+    id="codigoUsuario"
+    class="input-field"
+    placeholder="Ingrese código de usuario"
+    [(ngModel)]="codigoUsuario"
+  />
 
-<div>
-    <button type="button" (click)="fnCancel()">Cancelar</button>  
+  <label for="nombre">Nombre</label>
+  <input
+    [(ngModel)]="nameUser"
+    type="text"
+    id="nombre"
+    class="input-field"
+    placeholder="Ingrese nombre"
+  />
+
+  <label for="password">Contraseña</label>
+  <input
+    [(ngModel)]="passUser"
+    type="text"
+    id="password"
+    class="input-field"
+    placeholder="Ingrese contraseña"
+  />
+
+  <div *ngIf="this.displayDialog; then thenBlock3"></div>
+  <ng-template #thenBlock3>
+    <div class="centered-content">
+      <ng-container *ngTemplateOutlet="myplantilla"> </ng-container>
+    </div>
+  </ng-template>
+
+  <div>
+    <button type="submit" class="btn-submit" (click)="showDialog()">
+      Next
+    </button>
+    <button type="submit" class="btn-submit second-btn" (click)="fnCancel()">
+      Cancel
+    </button>
+  </div>
+
+  <label for="message">{{ message }}</label>
 </div>
+
+<ng-template #myplantilla>
+  <label for="password">Desea guardar el registro?</label>
+
+  <div>
+    <button type="submit" class="btn-submit" (click)="onInputChange()">
+      SignUp
+    </button>
+    <button type="submit" class="btn-submit second-btn" (click)="hideDialog()">
+      Cancel
+    </button>
+  </div>
+</ng-template>

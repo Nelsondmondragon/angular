@@ -1,15 +1,36 @@
-<p>home works!</p>
+<button type="submit" class="btn-submit" (click)="getPipes()">Ver pipes</button>
+<button type="submit" class="btn-submit second-btn" (click)="getDirectivas()">
+  Ver directivas
+</button>
+<button type="submit" class="btn-submit second-btn" (click)="getPlantilla()">
+  Ver platilla
+</button>
 
-
-<div *ngIf="this.lbolUserLogu; then thenBlock else elseBlock"></div>
+<div *ngIf="this.showPipe; then thenBlock"></div>
 <ng-template #thenBlock>
+  <div class="container">
+    <app-showpipes></app-showpipes></div
+></ng-template>
+
+<div *ngIf="this.showDirectiva; then thenBlock2"></div>
+<ng-template #thenBlock2>
+  <div class="container">
+    <app-show-directives></app-show-directives></div
+></ng-template>
+
+<ng-template #myplantilla>
   <div>
-        <label>eqtiqueta 1</label>
-  </div>     
-  <router-outlet />
+    <label for="plantilla">Plantilla</label>
+  </div>
 </ng-template>
-<ng-template #elseBlock>
-    <div>
-        <label>eqtiqueta 2</label>
-    </div>
-</ng-template>
+
+<div *ngIf="this.showPlantilla; then thenBlock3"></div>
+<ng-template #thenBlock3>
+  <div class="centered-content">
+    <br />
+    <ng-container *ngTemplateOutlet="myplantilla"> </ng-container>
+    <br />
+    <ng-container *ngTemplateOutlet="myplantilla"> </ng-container>
+    <br />
+    <ng-container *ngTemplateOutlet="myplantilla"> </ng-container></div
+></ng-template>

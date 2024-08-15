@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="box">
+    <div
+      [ngStyle]="{ background: colorBlue == 'blue' ? 'blue' : '#333' }"
+      class="content"
+    >
+      Div Izquierdo
+    </div>
+    <button class="btn" (click)="changeBackgroudBlue()">Botón Izquierdo</button>
+  </div>
+  <div class="box">
+    <div
+      [ngStyle]="{ background: colorGreen == 'green' ? 'green' : '#333' }"
+      class="content"
+    >
+      Div Derecho
+    </div>
+    <button class="btn" (click)="changeBackgroudGreen()">Botón Derecho</button>
+  </div>
+
+  <div class="box">
+    <div appMydirective class="content">Div personalizado</div>
+    <button class="btn" (click)="changeBackgroudGreen()">
+      directiva personalizada
+    </button>
+  </div>
+</div>

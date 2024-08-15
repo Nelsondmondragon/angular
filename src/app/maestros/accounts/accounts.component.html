@@ -1,5 +1,42 @@
+<div class="form-container">
+  <label for="codigoUsuario">Numero cuenta</label>
+  <input
+    type="text"
+    id="codigoUsuario"
+    class="input-field"
+    placeholder="Ingrese código de usuario"
+    [(ngModel)]="numCuent"
+  />
+
+  <label for="codigoUsuario">Nombre cuenta</label>
+  <input
+    [(ngModel)]="nomCuen"
+    type="text"
+    id="codigoUsuario"
+    class="input-field"
+    placeholder="Ingrese código de usuario"
+  />
+
+  <label for="message">{{ message }}</label>
+
+  <div>
+    <button type="submit" class="btn-submit" (click)="saveAccounts()">
+      Guardar cuenta
+    </button>
+  </div>
+</div>
+
 <div class="accounts-container">
   <h1>Account List</h1>
+  <div>
+    <button type="submit" class="btn-submit" (click)="this.fnGetAccounts()">
+      Obtener cuentas
+    </button>
+
+    <button type="submit" class="btn-submit second-btn" (click)="clearAccounts()">
+      limpiar cuentas
+    </button>
+  </div>
   <table *ngIf="lAccounts">
     <thead>
       <tr>
@@ -33,7 +70,6 @@
 <div class="button-container">
   <button class="styled-button" (click)="fnGetAccounts2()">Submit</button>
 </div>
-
 
 <div class="accounts-container">
   <h1>Account List</h1>

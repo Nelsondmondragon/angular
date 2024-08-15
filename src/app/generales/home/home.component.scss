@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+
+.btn-submit {
+  padding: 0.7em;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+.second-btn {
+  margin-left: 10px; /* Ajusta el valor según el espaciado deseado */
+}
+label {
+  color: #fff; /* Color de texto claro */
+  margin-bottom: 5px;
+  align-self: flex-start; /* Alinear las etiquetas a la izquierda */
+}
+
+/* Asegura que el contenedor del template esté centrado horizontalmente */
+.centered-content {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente si es necesario */
+  width: 100%;
+}
+
+/* Estilo opcional para cada div dentro de ng-template */
+.centered-content div {
+  margin-bottom: 15px; /* Espacio entre los elementos */
+  text-align: center; /* Centra el texto dentro del div */
+}
+
+/* Opcional: Si quieres que el texto del label esté en negrita */
+.centered-content label {
+  font-weight: bold;
+}

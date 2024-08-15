@@ -1,12 +1,17 @@
-table, th, td {
-    border: 1px solid black;
+@import "../../../styles.scss";
+
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
-.grid{
-    width: 100%;
-    background: #E6E6FA;
-    padding: 10px 2% 10px 2%;
-    float: none;
-    font-size: 12px;
+.grid {
+  width: 100%;
+  background: #e6e6fa;
+  padding: 10px 2% 10px 2%;
+  float: none;
+  font-size: 12px;
 }
 
 // Definiciones de colores (asegúrate de tener estos colores definidos en variables globales)
@@ -48,27 +53,90 @@ $button-text-color: #ffffff;
   }
 }
 
-
 .button-container {
-    margin-top: 10px;
+  margin-top: 10px;
+}
+
+// Estilo para el botón
+.styled-button {
+  background-color: $button-background-color;
+  border: none;
+  border-radius: 4px;
+  color: $button-text-color;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-background-color;
   }
-  
-  // Estilo para el botón
-  .styled-button {
-    background-color: $button-background-color;
-    border: none;
-    border-radius: 4px;
-    color: $button-text-color;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: $button-hover-background-color;
-    }
-  
-    &:focus {
-      outline: none;
-    }
+
+  &:focus {
+    outline: none;
   }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222; /* Fondo oscuro para el formulario */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Ancho del formulario */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+label {
+  color: #fff; /* Color de texto claro */
+  margin-bottom: 5px;
+  align-self: flex-start; /* Alinear las etiquetas a la izquierda */
+}
+
+.input-field {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #333; /* Fondo oscuro para los inputs */
+  border: 1px solid #555; /* Borde oscuro */
+  border-radius: 5px;
+  color: #fff; /* Color de texto claro */
+}
+
+.input-field::placeholder {
+  color: #bbb; /* Color del placeholder */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #777; /* Color de borde al enfocar */
+}
+
+
+.btn-submit {
+  padding: 0.7em;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+.second-btn {
+  margin-left: 10px; /* Ajusta el valor según el espaciado deseado */
+}
+label {
+  color: #fff; /* Color de texto claro */
+  margin-bottom: 5px;
+  align-self: flex-start; /* Alinear las etiquetas a la izquierda */
+}

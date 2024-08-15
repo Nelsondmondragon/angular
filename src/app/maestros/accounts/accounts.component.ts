@@ -11,6 +11,9 @@ import { Column, GridOption } from 'angular-slickgrid';
 export class AccountsComponent implements OnInit {
   constructor(private data: DataService, private service: ServiceService) {}
   userAccount: string = '';
+  nomCuen: string = '';
+  numCuent: string = '';
+  message: string = '';
   CDAccounts: Column[] = [];
   GPAccounts: GridOption = {};
   dsAccounts: any[] = [];
@@ -18,9 +21,20 @@ export class AccountsComponent implements OnInit {
   lAccounts: any[] = [];
   lAccounts2: any[] = [];
 
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.fnGetAccounts();
+  saveAccounts() {
+    this.data
+      .saveAccount(this.service.lstrUser, this.nomCuen, this.numCuent)
+      .subscribe({
+        next: (res) => {
+          if (res[0].Status == 'OK') {
+            this.message = 'Registro exitoso';
+          } else {
+            this.message = res[0].Error;
+          }
+        },
+      });
   }
   fnGetAccounts() {
     this.data.fnGetAccounts(this.service.lstrUser).subscribe({
@@ -38,5 +52,9 @@ export class AccountsComponent implements OnInit {
         this.dsAccounts = res;
       },
     });
+  }
+
+  clearAccounts() {
+    this.lAccounts = [];
   }
 }
